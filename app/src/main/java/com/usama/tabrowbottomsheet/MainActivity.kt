@@ -1,6 +1,5 @@
 package com.usama.tabrowbottomsheet
 
-import android.app.ActionBar.Tab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,12 +21,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Tab
-
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberBottomSheetScaffoldState
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -36,9 +32,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.usama.tabrowbottomsheet.ui.theme.TabRowBottomSheetTheme
 import kotlinx.coroutines.launch
@@ -117,35 +111,6 @@ class MainActivity : ComponentActivity() {
                         mutableStateOf(0)
                     }
 
-                    /*Column(
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        TabRow(selectedTabIndex = selectedTabItem) {
-                            tabItems.forEachIndexed { index, tabItem ->
-                                Tab(
-                                    selected = index == selectedTabItem,
-                                    onClick = {
-                                        selectedTabItem = index
-                                    },
-                                    text = {
-                                        Text(text = tabItem.title)
-                                    },
-                                    icon = Icon(
-                                        imageVector = if (index == selectedTabItem) {
-                                            tabItem.selectedIcon
-                                        } else tabItem.unSelectedIcon,
-                                        contentDescription = tabItem.title
-                                    )
-
-                                ) {
-
-                                }
-                            }
-                        }
-                    }
-                    */
-
-
                     var tabIndex by remember { mutableStateOf(0) }
 
                     Column(modifier = Modifier.fillMaxSize()) {
@@ -168,12 +133,9 @@ class MainActivity : ComponentActivity() {
                                         )
                                     }
                                 )
-
                             }
                         }
                     }
-
-
                 }
             }
         }
